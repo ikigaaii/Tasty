@@ -6,7 +6,7 @@ import com.dimension.tasty.models.Recipe
 
 
 class TastyRepository(
-    val db: RecipeDataBase
+ //   val db: RecipeDataBase
 ) {
 
     suspend fun getRandomRecipe() =
@@ -15,10 +15,10 @@ class TastyRepository(
     suspend fun searchRecipe(searchQuery: String) =
         RetrofitInstance.api.searchForMeals(searchQuery)
 
-    suspend fun upsert(recipe: Recipe) = db.getMealDao().upsert(recipe)
-
-    fun getAllRecipes() = db.getMealDao().getAllRecipes()
-
-    suspend fun deleteRecipe(recipe: Recipe) = db.getMealDao().deleteRecipe(recipe)
+ //   suspend fun upsert(recipe: Recipe) = db.getMealDao().upsert(recipe)
+//
+ //   fun getAllRecipes() = db.getMealDao().getAllRecipes()
+//
+ //   suspend fun deleteRecipe(recipe: Recipe) = db.getMealDao().deleteRecipe(recipe)
 }
 

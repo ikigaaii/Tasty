@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dimension.tasty.models.MealResponse
-import com.dimension.tasty.models.Recipe
 import com.dimension.tasty.repository.TastyRepository
 import com.dimension.tasty.util.Resource
 import kotlinx.coroutines.launch
@@ -15,6 +14,7 @@ class TastyViewModel(
 ): ViewModel() {
 
     val randomMeal: MutableLiveData<Resource<MealResponse>> = MutableLiveData()
+    val searchMeals: MutableLiveData<Resource<MealResponse>> = MutableLiveData()
 
     init {
         getRandomRecipe()
@@ -24,6 +24,12 @@ class TastyViewModel(
         randomMeal.postValue(Resource.Loading())
         val response = tastyRepository.getRandomRecipe()
         randomMeal.postValue(handleMealResponse(response))
+    }
+
+    fun searchRecipes(str: String) = viewModelScope.launch {
+        searchMeals.postValue(Resource.Loading())
+        val response = tastyRepository.searchRecipe(str)
+        searchMeals.postValue(handleMealResponse(response))
     }
 
     private fun handleMealResponse(response: Response<MealResponse>) : Resource<MealResponse> {

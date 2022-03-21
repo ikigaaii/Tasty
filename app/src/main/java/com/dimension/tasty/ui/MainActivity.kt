@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setupWithNavController(navController)
 
 
-        val newsRepository = TastyRepository(RecipeDataBase(this))
+        val newsRepository = TastyRepository()
         val viewModelFactory = TastyViewModelProviderFactory(newsRepository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(TastyViewModel::class.java)
     }

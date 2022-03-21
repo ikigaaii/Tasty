@@ -3,12 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/drawable-v24/ic_favorite.xml" value="0.23796296296296296" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/activity_main.xml" value="0.1334853090172239" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/item_recipe_preview.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/random_recipe_fragment.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/recipe_fragment.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/recipe_search_fragment.xml" value="0.264" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/saved_recipe_fragment.xml" value="0.1334853090172239" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/saved_recipe_fragment.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/menu/main_menu.xml" value="0.22870370370370371" />
       </map>
     </option>

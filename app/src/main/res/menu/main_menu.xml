@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/randomRecipeFragment"
+        android:title="Random Recipe"
+        android:icon="@drawable/ic_shuffle"/>
+    <item
+        android:id="@+id/savedRecipesFragment"
+        android:title="Saved Recipes"
+        android:icon="@drawable/ic_favorite"/>
+    <item
+        android:id="@+id/searchRecipeFragment"
+        android:title="Search Recipes"
+        android:icon="@drawable/ic_search_24"/>
+
 </menu>

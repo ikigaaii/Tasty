@@ -1,6 +1,7 @@
 package com.dimension.tasty.ui.fragments
 
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -34,43 +35,35 @@ class RandomRecipeFragment : Fragment(R.layout.random_recipe_fragment) {
 
         binding.btnRefresh.setOnClickListener {
 
-
+            viewModel.getRandomRecipe()
         }
 
         viewModel.randomMeal.observe(viewLifecycleOwner, Observer { response ->
             when (response) {
                 is Resource.Succes -> {
                     response.data?.let { mealResponse ->
-                        Glide.with(view).load(mealResponse.meals[0].strMealThumb).into(binding.ivRecipeImage)
-                        binding.tvTitle.text = mealResponse.meals[0].strMeal
-                        binding.tvType.text = mealResponse.meals[0].strTags
-                        binding.tvCategory.text = mealResponse.meals[0].strCategory
+                        val recipe = mealResponse.recipes[0]
+                        Glide.with(view).load(recipe.image).into(binding.ivRecipeImage)
+                        binding.tvTitle.text = recipe.title
+                        binding.tvType.text = recipe.healthScore.toString()
+                     //   binding.tvCategory.text = mealResponse.recipes[0].strCategory
 
-                        val str = StringBuilder()
 
-                        str.append(mealResponse.meals[0].strIngredient1 + " " + mealResponse.meals[0].strMeasure1 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient2 + " " + mealResponse.meals[0].strMeasure2 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient3 + " " + mealResponse.meals[0].strMeasure3 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient4 + " " + mealResponse.meals[0].strMeasure4 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient5 + " " + mealResponse.meals[0].strMeasure5 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient6 + " " + mealResponse.meals[0].strMeasure6 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient7 + " " + mealResponse.meals[0].strMeasure7 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient8 + " " + mealResponse.meals[0].strMeasure8 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient9 + " " + mealResponse.meals[0].strMeasure9 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient10 + " " + mealResponse.meals[0].strMeasure10 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient11 + " " + mealResponse.meals[0].strMeasure11 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient12 + " " + mealResponse.meals[0].strMeasure12 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient13 + " " + mealResponse.meals[0].strMeasure13 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient14 + " " + mealResponse.meals[0].strMeasure14 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient15 + " " + mealResponse.meals[0].strMeasure15 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient16 + " " + mealResponse.meals[0].strMeasure16 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient17 + " " + mealResponse.meals[0].strMeasure17 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient18 + " " + mealResponse.meals[0].strMeasure18 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient19 + " " + mealResponse.meals[0].strMeasure19 + "\n")
-                        str.append(mealResponse.meals[0].strIngredient20 + " " + mealResponse.meals[0].strMeasure20)
-                        binding.tvIngredients.text = str
+                        var ingredients = ""
+                        for(value in recipe.extendedIngredients){
+                            if (ingredients.isEmpty()) {
+                                ingredients = value.original
+                            } else {
+                                ingredients = ingredients + ", \n" + value.original
+                            }
+                        }
 
-                        binding.tvCookingInstruction.text = mealResponse.meals[0].strInstructions
+
+
+                        binding.tvIngredients.text = ingredients
+
+
+                        binding.tvCookingInstruction.text =  Html.fromHtml(recipe.instructions)
 
                     }
                 }

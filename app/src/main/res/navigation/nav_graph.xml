@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_navigatin"
+    android:id="@+id/main_navigation"
     app:startDestination="@id/randomRecipeFragment">
 
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.dimension.tasty.ui.fragments.RecipeFragment"
+        android:label="RecipeFragment" >
+        <argument
+            android:name="recipe"
+            app:argType="com.dimension.tasty.models.Recipe" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedRecipesFragment"
+        android:name="com.dimension.tasty.ui.fragments.SavedRecipesFragment"
+        android:label="SavedRecipesFragment" >
+        <action
+            android:id="@+id/action_savedRecipesFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/randomRecipeFragment"
         android:name="com.dimension.tasty.ui.fragments.RandomRecipeFragment"
         android:label="RandomRecipeFragment" />
+    <fragment
+        android:id="@+id/searchRecipeFragment"
+        android:name="com.dimension.tasty.ui.fragments.SearchRecipeFragment"
+        android:label="SearchRecipeFragment" >
+        <action
+            android:id="@+id/action_searchRecipeFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
 </navigation>
