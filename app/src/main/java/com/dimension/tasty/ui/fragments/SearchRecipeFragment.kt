@@ -7,15 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dimension.tasty.R
 import com.dimension.tasty.adapter.RecipesAdapter
 import com.dimension.tasty.databinding.RecipeSearchFragmentBinding
 import com.dimension.tasty.ui.MainActivity
 import com.dimension.tasty.ui.TastyViewModel
-import com.dimension.tasty.util.Resource
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
@@ -51,17 +48,17 @@ class SearchRecipeFragment : Fragment(R.layout.recipe_search_fragment) {
      //       )
      //   }
 
-        var job : Job?  = null
-        binding.etSearch.addTextChangedListener{ editable->
-            job?.cancel()
-            job = MainScope().launch {
-                delay(500L)
-                editable?.let {
-                    if(editable.toString().isNotEmpty()){
-                        viewModel.searchRecipes(editable.toString())}
-                }
-            }
-        }
+     //   var job : Job?  = null
+     //   binding.etSearch.addTextChangedListener{ editable->
+     //       job?.cancel()
+     //       job = MainScope().launch {
+     //           delay(500L)
+     //           editable?.let {
+     //               if(editable.toString().isNotEmpty()){
+     //                   viewModel.searchRecipes(editable.toString())}
+     //           }
+     //       }
+     //   }
 
       //  viewModel.searchMeals.observe(viewLifecycleOwner, Observer { response ->
       //      when(response){

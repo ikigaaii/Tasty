@@ -13,10 +13,4 @@ interface TastyApi  {
         @Query("apiKey") apiKey: String = API_KEY
         ): Response<MealResponse>
 
-    @GET("search.php")
-    suspend fun searchForMeals(
-        @Query("s") searchQuery: String
-    ): Response<MealResponse>
-
-
 }

@@ -1,4 +1,4 @@
-package com.dimension.tasty.models
+package com.dimension.tasty.models.recipe
 
 data class AnalyzedInstruction(
     val name: String,

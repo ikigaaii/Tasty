@@ -26,11 +26,11 @@ class TastyViewModel(
         randomMeal.postValue(handleMealResponse(response))
     }
 
-    fun searchRecipes(str: String) = viewModelScope.launch {
-        searchMeals.postValue(Resource.Loading())
-        val response = tastyRepository.searchRecipe(str)
-        searchMeals.postValue(handleMealResponse(response))
-    }
+  //  fun searchRecipes(str: String) = viewModelScope.launch {
+  //      searchMeals.postValue(Resource.Loading())
+  //      val response = tastyRepository.searchRecipe(str)
+  //      searchMeals.postValue(handleMealResponse(response))
+  //  }
 
     private fun handleMealResponse(response: Response<MealResponse>) : Resource<MealResponse> {
         if (response.isSuccessful){

@@ -37,7 +37,7 @@ class RecipeFragment : Fragment(R.layout.recipe_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel = (activity as MainActivity).viewModel
 
-        val recipe = args.recipe
+       // val recipe = args.recipe
 
 
       //  Glide.with(view).load(recipe.strMealThumb).into(binding.ivRecipeImage)

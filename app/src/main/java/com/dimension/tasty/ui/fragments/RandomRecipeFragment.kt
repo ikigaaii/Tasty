@@ -45,11 +45,12 @@ class RandomRecipeFragment : Fragment(R.layout.random_recipe_fragment) {
                         val recipe = mealResponse.recipes[0]
                         Glide.with(view).load(recipe.image).into(binding.ivRecipeImage)
                         binding.tvTitle.text = recipe.title
-                        binding.tvType.text = recipe.healthScore.toString()
+                      //  binding.tvType.text = recipe.healthScore.toString()
                      //   binding.tvCategory.text = mealResponse.recipes[0].strCategory
 
 
                         var ingredients = ""
+
                         for(value in recipe.extendedIngredients){
                             if (ingredients.isEmpty()) {
                                 ingredients = value.original
@@ -58,11 +59,7 @@ class RandomRecipeFragment : Fragment(R.layout.random_recipe_fragment) {
                             }
                         }
 
-
-
                         binding.tvIngredients.text = ingredients
-
-
                         binding.tvCookingInstruction.text =  Html.fromHtml(recipe.instructions)
 
                     }

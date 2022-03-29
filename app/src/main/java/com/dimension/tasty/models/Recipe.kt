@@ -1,15 +1,9 @@
 package com.dimension.tasty.models
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import java.io.Serializable
+import com.dimension.tasty.models.recipe.ExtendedIngredient
 
-
-//@Entity(tableName = "recipes")
 data class Recipe(
- //   @PrimaryKey(autoGenerate = true)
     val aggregateLikes: Int,
-    val analyzedInstructions: List<AnalyzedInstruction>,
     val cheap: Boolean,
     val creditsText: String,
     val cuisines: List<Any>,
@@ -19,7 +13,7 @@ data class Recipe(
     val extendedIngredients: List<ExtendedIngredient>,
     val gaps: String,
     val glutenFree: Boolean,
-    val healthScore: Double,
+    val healthScore: Int,
     val id: Int,
     val image: String,
     val imageType: String,
@@ -33,7 +27,7 @@ data class Recipe(
     val servings: Int,
     val sourceName: String,
     val sourceUrl: String,
-    val spoonacularScore: Double,
+    val spoonacularScore: Int,
     val spoonacularSourceUrl: String,
     val summary: String,
     val sustainable: Boolean,
@@ -43,4 +37,4 @@ data class Recipe(
     val veryHealthy: Boolean,
     val veryPopular: Boolean,
     val weightWatcherSmartPoints: Int
-) //: Serializable
+)
