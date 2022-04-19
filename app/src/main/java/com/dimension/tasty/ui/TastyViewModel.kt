@@ -63,6 +63,7 @@ class TastyViewModel(
     fun deleteRecipe(recipe: SavedRecipe) = viewModelScope.launch {
         tastyRepository.deleteRecipe(recipe)
         getSavedRecipesId().join()
+        getSavedRecipes().join()
     }
 
     private fun handleRandomRecipeResponse(responseRandom: Response<RandomRecipeResponse>) : Resource<RandomRecipeResponse> {

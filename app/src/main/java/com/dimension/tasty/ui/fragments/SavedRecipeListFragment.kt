@@ -77,7 +77,6 @@ class SavedRecipeListFragment : Fragment(R.layout.saved_recipe_list_fragment) {
                 val position = viewHolder.adapterPosition
                 val recipe = recipesAdapter.differ.currentList[position]
                 viewModel.deleteRecipe(recipe)
-                viewModel.getSavedRecipes()
                 Snackbar.make(view, "Successfully deleted", Snackbar.LENGTH_LONG).apply {
                     setAction("Undo"){
                         viewModel.saveRecipe(recipe)

@@ -50,6 +50,12 @@ class RandomRecipeFragment : Fragment(R.layout.recipe_fragment) {
         viewModel = (activity as MainActivity).viewModel
         (activity as MainActivity?)?.supportActionBar?.title = "Random Recipe"
         binding?.btnRefresh?.setOnClickListener {
+            binding?.ivFavoriteRecipe?.setImageDrawable(
+                ContextCompat.getDrawable(
+                    requireActivity(),
+                    R.drawable.ic_favorite_unselected
+                )
+            )
             viewModel.getRandomRecipe()
         }
 
