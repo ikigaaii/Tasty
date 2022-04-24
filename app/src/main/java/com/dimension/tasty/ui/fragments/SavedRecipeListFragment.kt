@@ -57,6 +57,10 @@ class SavedRecipeListFragment : Fragment(R.layout.saved_recipe_list_fragment) {
         }
 
         viewModel.savedRecipe.observe(viewLifecycleOwner, Observer {
+            if(it.isNotEmpty()){
+                binding?.tvNoRecipesAlert?.visibility = View.GONE
+                binding?.rvSavedRecipes?.visibility = View.VISIBLE
+            }
             recipesAdapter?.differ?.submitList(it)
         })
 

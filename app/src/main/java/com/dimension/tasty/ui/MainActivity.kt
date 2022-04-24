@@ -1,6 +1,6 @@
 package com.dimension.tasty.ui
 
-import android.content.Context
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,7 +10,6 @@ import com.dimension.tasty.R
 import com.dimension.tasty.databinding.ActivityMainBinding
 import com.dimension.tasty.db.RecipeDataBase
 import com.dimension.tasty.repository.TastyRepository
-import android.net.ConnectivityManager
 import androidx.navigation.ui.setupWithNavController
 
 

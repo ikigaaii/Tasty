@@ -8,6 +8,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/drawable-v24/ic_favorite_selected.xml" value="0.28615384615384615" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/drawable-v24/ic_favorite_unselected.xml" value="0.28615384615384615" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/drawable/ic_launcher_background.xml" value="0.28615384615384615" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/drawable/ic_main_icon.xml" value="0.2814814814814815" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/drawable/ic_refresh_24.xml" value="0.28615384615384615" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/drawable/ic_search_24.xml" value="0.28615384615384615" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/activity_main.xml" value="0.264" />
@@ -17,6 +18,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/recipe_search_fragment.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/recipe_search_list_fragment.xml" value="0.1334853090172239" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/saved_recipe_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/layout/saved_recipe_list_fragment.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/menu/main_menu.xml" value="0.22870370370370371" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Tasty/app/src/main/res/menu/recipe_menu.xml" value="0.24537037037037038" />
       </map>

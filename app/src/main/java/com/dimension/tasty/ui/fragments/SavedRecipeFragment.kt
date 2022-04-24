@@ -39,11 +39,17 @@ class SavedRecipeFragment : Fragment(R.layout.recipe_fragment) {
         binding.btnRefresh.visibility = View.GONE
         viewModel = (activity as MainActivity).viewModel
         viewModel.getSavedRecipesId()
-        viewModel.savedRecipesId.observe(viewLifecycleOwner, {
+        viewModel.savedRecipesId.observe(viewLifecycleOwner) {
             recipesId = it
 
             val recipe = args.recipe
-            binding.ivRecipeImage.setImageBitmap(BitmapFactory.decodeByteArray(recipe.image, 0, recipe.image.size))
+            binding.ivRecipeImage.setImageBitmap(
+                BitmapFactory.decodeByteArray(
+                    recipe.image,
+                    0,
+                    recipe.image.size
+                )
+            )
             binding.tvTitle.text = recipe.title
             binding.tvHealthScore.text = "Health Score: " + recipe.healthScore
             binding.tvReadyInMinutes.text =
@@ -83,7 +89,7 @@ class SavedRecipeFragment : Fragment(R.layout.recipe_fragment) {
                 }
 
             }
-        })
+        }
     }
 
     override fun onPause() {
